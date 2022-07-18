@@ -1,30 +1,97 @@
 [
-  {
-    "model": "shopping_list.ShoppingItem",
-    "fields": {
-      "name": "Pineapple",
-      "purchased": true
-    }
-  },
-  {
-    "model": "shopping_list.ShoppingItem",
-    "fields": {
-      "name": "Broccoli",
-      "purchased": false
-    }
-  },
-  {
-    "model": "shopping_list.ShoppingItem",
-    "fields": {
-      "name": "Chocolate",
-      "purchased": false
-    }
-  },
-  {
-    "model": "shopping_list.ShoppingItem",
-    "fields": {
-      "name": "Milk",
-      "purchased": true
-    }
+{
+  "model": "shopping_list.shoppinglist",
+  "pk": "ab33e883-f62d-4602-a398-34ef6fa09214",
+  "fields": {
+    "name": "Office Supplies"
   }
+},
+{
+  "model": "shopping_list.shoppinglist",
+  "pk": "c7e49090-f45a-42a1-a028-9d72e9b35c4e",
+  "fields": {
+    "name": "Groceries"
+  }
+},
+{
+  "model": "shopping_list.shoppingitem",
+  "pk": "0f25329f-a7f8-4477-afde-8b6a208083df",
+  "fields": {
+    "name": "Paper",
+    "purchased": false,
+    "shopping_list": "ab33e883-f62d-4602-a398-34ef6fa09214"
+  }
+},
+{
+  "model": "shopping_list.shoppingitem",
+  "pk": "15dbcd5c-7d8b-4532-a5d6-7c05c89b6ac1",
+  "fields": {
+    "name": "Pencils",
+    "purchased": true,
+    "shopping_list": "ab33e883-f62d-4602-a398-34ef6fa09214"
+  }
+},
+{
+  "model": "shopping_list.shoppingitem",
+  "pk": "173bade7-71ec-41ff-98cb-69951d6f2996",
+  "fields": {
+    "name": "Bananas",
+    "purchased": false,
+    "shopping_list": "c7e49090-f45a-42a1-a028-9d72e9b35c4e"
+  }
+},
+{
+  "model": "shopping_list.shoppingitem",
+  "pk": "2e20d553-41bb-457d-9da8-1d6b7ea3e6e9",
+  "fields": {
+    "name": "Notepads",
+    "purchased": false,
+    "shopping_list": "ab33e883-f62d-4602-a398-34ef6fa09214"
+  }
+},
+{
+  "model": "shopping_list.shoppingitem",
+  "pk": "32d1dff4-d353-45ce-872d-06c954bab210",
+  "fields": {
+    "name": "Butter",
+    "purchased": true,
+    "shopping_list": "c7e49090-f45a-42a1-a028-9d72e9b35c4e"
+  }
+},
+{
+  "model": "shopping_list.shoppingitem",
+  "pk": "7c58bc0b-56b8-47d8-b75f-b876a59fbb94",
+  "fields": {
+    "name": "Milk",
+    "purchased": false,
+    "shopping_list": "c7e49090-f45a-42a1-a028-9d72e9b35c4e"
+  }
+},
+{
+  "model": "shopping_list.shoppingitem",
+  "pk": "a7ee8f52-82f5-416f-ad09-f46c7a64f27d",
+  "fields": {
+    "name": "Eggs",
+    "purchased": false,
+    "shopping_list": "c7e49090-f45a-42a1-a028-9d72e9b35c4e"
+  }
+},
+{
+  "model": "shopping_list.shoppingitem",
+  "pk": "b14b558c-2019-47b8-8eb9-7b8e25288571",
+  "fields": {
+    "name": "Pens",
+    "purchased": false,
+    "shopping_list": "ab33e883-f62d-4602-a398-34ef6fa09214"
+  }
+},
+{
+  "model": "shopping_list.shoppingitem",
+  "pk": "fcea2417-69ab-427f-b20c-f1c6c6cbff9f",
+  "fields": {
+    "name": "Tomatos",
+    "purchased": true,
+    "shopping_list": "c7e49090-f45a-42a1-a028-9d72e9b35c4e"
+  }
+}
 ]
