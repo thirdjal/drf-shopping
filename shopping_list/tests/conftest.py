@@ -1,7 +1,9 @@
 import pytest
 from rest_framework.test import APIClient
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from shopping_list.models import ShoppingItem, ShoppingList
+
+User = get_user_model()
 
 
 @pytest.fixture(scope="session")
