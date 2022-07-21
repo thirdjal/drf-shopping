@@ -1,4 +1,4 @@
-from rest_framework import generics, status
+from rest_framework import generics, status, filters
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -22,6 +22,8 @@ class ListAddShoppingItem(generics.ListCreateAPIView):
     serializer_class = ShoppingItemSerializer
     permission_classes = [AllShoppingItemsShoppingListMembersOnly]
     pagination_class = LargerResultsSetPagination
+    filter_backends = (filters.OrderingFilter,)
+    ordering_fields = ["name", "purchased"]
 
     def get_queryset(self):
         shopping_list = self.kwargs['pk']
@@ -75,3 +77,14 @@ class ShoppingListRemoveMembers(APIView):
             return Response(serializer.data)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class SearchShoppingItems(generics.ListAPIView):
+    serializer_class = ShoppingItemSerializer
+
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ["name"]
+
+    def get_queryset(self):
+        users_shopping_lists = ShoppingList.objects.filter(members=self.request.user)
+        return ShoppingItem.objects.filter(shopping_list__in=users_shopping_lists).order_by("name")
