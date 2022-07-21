@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.authtoken.views import obtain_auth_token
-
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from shopping_list.api.views import ListAddShoppingList, ShoppingListDetail, ListAddShoppingItem, ShoppingItemDetail, ShoppingListAddMembers, ShoppingListRemoveMembers, SearchShoppingItems
 
 urlpatterns = [
@@ -13,4 +13,6 @@ urlpatterns = [
     path("api/shopping-lists/<uuid:pk>/remove-members/", ShoppingListRemoveMembers.as_view(), name="shopping_list_remove_members"),
     path("api/shopping-lists/<uuid:pk>/shopping-items/", ListAddShoppingItem.as_view(), name="list_add_shopping_item"),
     path("api/shopping-lists/<uuid:pk>/shopping-items/<uuid:item_pk>/", ShoppingItemDetail.as_view(), name="shopping_item_detail"),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger_ui'),
 ]
